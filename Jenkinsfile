@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'kubectl get pod '
+                sh 'kubectl get pod && helm list'
             }
         }
         stage('Test') {
