@@ -22,7 +22,8 @@ pipeline {
                     docker.withRegistry( '', registryCredential ) { 
                         dockerImage.push() 
                    }
-            }
+                 }
+               }
         }
          stage('Deploy to Dev environment  ') {
             steps {
