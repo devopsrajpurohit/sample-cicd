@@ -3,10 +3,10 @@ pipeline {
     environment {
         CI = 'true'
         registry = "arajpurohit/nginx-cicd" 
-4       registryCredential = 'docker-login' 
+        registryCredential = 'docker-login' 
         containerImage=''
-5
-    }
+
+     }
     
     stages {
         stage('Build') {
