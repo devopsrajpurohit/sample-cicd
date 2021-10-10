@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker ps'
+                sh 'kubectl get pod '
             }
         }
         stage('Test') {
