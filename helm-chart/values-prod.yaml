@@ -1,4 +1,10 @@
+namespace: prod
+ingress:
+  enabled: true
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: example.local
+    - host: chart-example.local
       paths: []
   tls: []
