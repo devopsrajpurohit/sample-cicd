@@ -25,21 +25,6 @@ pipeline {
                  }
                }
         }
-         stage('Deploy to Dev environment  ') {
-            steps {
-                sh 'echo deploying '
-            }
-        }
-         stage('Deploy to Staging environment ') {
-            steps {
-                 sh 'echo deploying '
-            }
-        }
-         stage('Deploy to Prod Env') {
-            steps {
-                  sh 'echo deploying '
-            }
-        }
       
     }
 }
