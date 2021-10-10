@@ -32,7 +32,7 @@ pipeline {
                 branch 'main' 
             }
             steps {
-                sh 'helm upgrade nginx -n prod  -f values.yaml -f values-prod.yaml ./charts --set=image.tag=$tag '
+                sh 'helm upgrade nginx -n prod  -f values.yaml -f values-prod.yaml ./helm-chart --set=image.tag=$tag '
             }
         }
          stage('deploying for staging') {
@@ -40,7 +40,7 @@ pipeline {
                 branch 'staging' 
             }
             steps {
-                sh 'helm upgrade nginx  -n dev staging -f values.yaml -f values-staging.yaml ./charts --set=image.tag=$tag '
+                sh 'helm upgrade nginx  -n dev staging -f values.yaml -f values-staging.yaml ./helm-chart --set=image.tag=$tag '
             }
         }
         stage('deploying for dev') {
@@ -48,7 +48,7 @@ pipeline {
                 branch 'devlopment' 
             }
             steps {
-                sh 'helm upgrade nginx -n dev -f values.yaml -f values-dev.yaml ./charts --set=image.tag=$tag '
+                sh 'helm upgrade nginx -n dev -f values.yaml -f values-dev.yaml ./helm-chart --set=image.tag=$tag '
             }
         }
     }
