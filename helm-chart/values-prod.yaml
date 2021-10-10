@@ -1,0 +1,4 @@
+  hosts:
+    - host: example.local
+      paths: []
+  tls: []
