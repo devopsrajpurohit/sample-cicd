@@ -27,7 +27,7 @@ pipeline {
                }
         }
 
-         stage('deploying for development') {
+         stage('deploying for prod') {
             when {
                 branch 'main' 
             }
@@ -35,7 +35,7 @@ pipeline {
                 sh 'helm upgrade nginx -n prod  -f values.yaml -f values-prod.yaml ./charts --set=image.tag=$tag '
             }
         }
-         stage('deploying for development') {
+         stage('deploying for staging') {
             when {
                 branch 'staging' 
             }
@@ -43,7 +43,7 @@ pipeline {
                 sh 'helm upgrade nginx  -n dev staging -f values.yaml -f values-staging.yaml ./charts --set=image.tag=$tag '
             }
         }
-        stage('deploying for development') {
+        stage('deploying for dev') {
             when {
                 branch 'devlopment' 
             }
