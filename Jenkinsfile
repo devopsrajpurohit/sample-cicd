@@ -18,7 +18,6 @@ pipeline {
         }
         stage('Artifact ') {
             steps {
-                script {
                  script { 
                     docker.withRegistry( '', registryCredential ) { 
                         dockerImage.push() 
