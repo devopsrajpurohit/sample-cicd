@@ -40,7 +40,7 @@ pipeline {
                 branch 'staging' 
             }
             steps {
-                sh 'helm upgrade nginx  -n dev staging -f ./helm-chart/values.yaml -f ./helm-chart/values-staging.yaml ./helm-chart --set=image.tag=$tag '
+                sh 'helm upgrade nginx  -n  staging -f ./helm-chart/values.yaml -f ./helm-chart/values-staging.yaml ./helm-chart --set=image.tag=$tag '
             }
         }
         stage('deploying for dev') {
